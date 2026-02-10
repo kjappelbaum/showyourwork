@@ -148,7 +148,7 @@ def get_upstream_dependencies(file, dependencies, depth=0):
     else:
         res = set()
     if not depth:
-        return list(res)
+        return list(set(list(res)))
     else:
         return res
 
