@@ -502,7 +502,8 @@ if __name__ == "__main__":
         config["ms_tex"], []
     )
     for figure_name in config["tree"]["figures"]:
-        graphics = list(set(config["tree"]["figures"][figure_name]["graphics"]))
+        config["tree"]["figures"][figure_name]["graphics"] = list(set(config["tree"]["figures"][figure_name]["graphics"]))
+        graphics = config["tree"]["figures"][figure_name]["graphics"]
         config["dependencies"][config["ms_tex"]].extend(
             [Path(graphic).as_posix() for graphic in graphics]
         )
