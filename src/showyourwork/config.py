@@ -150,7 +150,7 @@ def get_upstream_dependencies(file, dependencies, depth=0):
     if not depth:
         return list(set(list(res)))
     else:
-        return list(set(list(res)))
+        return set(res)
 
 
 def parse_overleaf():
